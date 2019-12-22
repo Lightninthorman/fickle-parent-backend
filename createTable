@@ -1,1 +1,16 @@
-CREATE TABLE parent_entries (entry_id serial, entry_date timestamp, user_id text, child_name text, journal_entry text, behavior int, behavior_desc text, helpful int, helpful_desc text, respect int, respect_desc text, sleep int, sleep_desc text, regret int, regret_desc text);
+CREATE TABLE parent_entries (
+    entry_id serial,
+    entry_date timestamp,
+    user_id text,
+    child_name text,
+    journal_entry text,
+    behavior int,
+    behavior_desc text,
+    helpful int,
+    helpful_desc text,
+    respect int,
+    respect_desc text,
+    sleep int, 
+    sleep_desc text,
+    regret int,
+    regret_desc text);
