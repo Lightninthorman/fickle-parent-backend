@@ -1,6 +1,6 @@
 CREATE TABLE parent_entries (
     entry_id serial,
-    entry_date timestamp,
+    entry_date text,
     user_id text,
     child_name text,
     journal_entry text,
@@ -10,7 +10,7 @@ CREATE TABLE parent_entries (
     helpful_desc text,
     respect int,
     respect_desc text,
-    sleep int, 
+    sleep int,
     sleep_desc text,
     regret int,
     regret_desc text);
