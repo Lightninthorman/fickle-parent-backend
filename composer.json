@@ -1,10 +1,4 @@
 {
-    "name": "arthurkuivanen/fickle-parent-backend",
-    "authors": [
-        {
-            "name": "Thor Kuivanen",
-            "email": "arthur.k777@gmail.com"
-        }
-    ],
+    "name": "lightnin/fickle-parent-backend",
     "require": {}
 }

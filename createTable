@@ -14,3 +14,35 @@ CREATE TABLE parent_entries (
     sleep_desc text,
     regret int,
     regret_desc text);
+
+    INSERT INTO parent_entries (
+    entry_date,
+    user_id,
+    child_name,
+    journal_entry,
+    behavior,
+    behavior_desc,
+    helpful,
+    helpful_desc,
+    respect,
+    respect_desc,
+    sleep,
+    sleep_desc,
+    regret,
+    regret_desc)
+    VALUES (
+    '12/22/2019',
+    'asdf123',
+    'Josie",
+    'Pretty good',
+    '7',
+    'Ok',
+    '7',
+    'sort of helpful',
+    '7',
+    'no respect',
+    '7',
+    'good sleep',
+    '7',
+    'some regrets'
+    );
