@@ -1,0 +1,10 @@
+{
+    "name": "arthurkuivanen/fickle-parent-backend",
+    "authors": [
+        {
+            "name": "Thor Kuivanen",
+            "email": "thor.kuivanen@yahoo.com"
+        }
+    ],
+    "require": {}
+}

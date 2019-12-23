@@ -1,5 +1,5 @@
 <?php
-    $dbconn = pg_connect("host=localhost dbname=fickle_parent");
+    ​$dbconn = pg_connect(getenv("DATABASE_URL"));
 
     class Entry{
         public $entry_id;
