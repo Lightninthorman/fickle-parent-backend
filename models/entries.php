@@ -1,5 +1,5 @@
 <?php
-    ​$dbconn = pg_connect(getenv("DATABASE_URL"));
+    pg_connect(getenv("DATABASE_URL"));
 
     class Entry{
         public $entry_id;
