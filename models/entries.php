@@ -112,7 +112,7 @@
 
         static function delete ($child, $user){
             $query = "DELETE FROM parent_entries WHERE child_name = $1 AND user_id = $2";
-            $query_params = [$child];
+            $query_params = [$child,$user];
             pg_query_params($query, $query_params);
             return self::all($user);
         }
