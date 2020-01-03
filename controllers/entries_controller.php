@@ -33,7 +33,7 @@
         $entries = Entries::create($new_entry);
         echo json_encode($entries);
     }elseif($_REQUEST['action'] === 'delete'){
-        $entries = Entries::delete($_REQUEST['id'], $_REQUEST['user']);
+        $entries = Entries::delete($_REQUEST['child'], $_REQUEST['user']);
         echo json_encode($entries);
     }elseif($_REQUEST['action'] === 'update'){
         $request_body = file_get_contents('php://input');

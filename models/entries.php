@@ -110,9 +110,9 @@
 			return self::all($entry->user_id);
         }
 
-        static function delete ($id, $user){
-            $query = "DELETE FROM parent_entries WHERE entry_id = $1";
-            $query_params = [$id];
+        static function delete ($child, $user){
+            $query = "DELETE FROM parent_entries WHERE child_name = $1 AND user_id = $2";
+            $query_params = [$child];
             pg_query_params($query, $query_params);
             return self::all($user);
         }

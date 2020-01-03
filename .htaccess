@@ -12,7 +12,7 @@ RewriteCond %{REQUEST_METHOD} ^POST$
 RewriteRule ^fickle-parent/$ controllers/entries_controller.php?action=create
 
 RewriteCond %{REQUEST_METHOD} ^DELETE$
-RewriteRule ^fickle-parent/(.*)/([0-9]+)$ controllers/entries_controller.php?action=delete&user=$1&id=$2
+RewriteRule ^fickle-parent/(.*)/(.*)$ controllers/entries_controller.php?action=delete&user=$1&child=$2
 
 RewriteCond %{REQUEST_METHOD} ^PUT$
 RewriteRule ^fickle-parent/([0-9]+)$ controllers/entries_controller.php?action=update&id=$1
