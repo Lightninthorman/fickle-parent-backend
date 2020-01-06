@@ -5,7 +5,7 @@
     include_once __DIR__ . '/../models/email.php';
 
     if($_REQUEST['action'] === 'index'){
-        email();
+        
         echo json_encode(Entries::all($_REQUEST['user']));
 
     }elseif ($_REQUEST['action'] === 'create'){
