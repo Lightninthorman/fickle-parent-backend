@@ -9,13 +9,8 @@ $email->addTo("arthur.k777@gmail.com", "Example User");
 $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
 $email->addContent(
     "text/html", "
-    <!DOCTYPE html>
-    <html lang='en' dir='ltr'>
-        <head>
-            <meta charset='utf-8'>
-            <script src='//https://cdn.jsdelivr.net/npm/chart.js@2.8.0'></script>
-        </head>
-        <body>
+
+        <script src='//https://cdn.jsdelivr.net/npm/chart.js@2.8.0'></script>
             <canvas id='myChart'></canvas>
         <script>
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -37,8 +32,6 @@ $email->addContent(
             options: {}
             });
         </script>
-        </body>
-    </html>
     "
 );
 $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
