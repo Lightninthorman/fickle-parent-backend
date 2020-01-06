@@ -76,7 +76,7 @@
         //     $body_object->$lowestAvg,
         //     $body_object->user
         // );
-        echo "Your email has been sent";
+        print_r("hello");
     }else{
         echo "didn't work";
     }
