@@ -11,9 +11,7 @@
     }elseif($_REQEUEST['action'] === 'email'){
         $request_body = file_get_contents('php://input');
         $body_object = json_decode($request_body);
-        if($body_object->user_email === null){
-            return;
-        }
+        print_r($body_object);
         email(
             $body_object->user_email,
             $body_object->child_email,
