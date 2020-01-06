@@ -20,6 +20,7 @@ $email->addContent(
     <p>$improvement</p>
     <p>Love,</p>
     <p>$user</p>
+    <p>** A copy of this email has been sent to Santa to help update his list **</p> 
     "
 );
 $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));

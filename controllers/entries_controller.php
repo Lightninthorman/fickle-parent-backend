@@ -62,10 +62,8 @@
         echo json_encode($entries);
     }elseif($_REQUEST['action'] === 'email'){
         $request_body = file_get_contents('php://input');
-        print_r($request_body);
+
         $body_object = json_decode($request_body);
-        echo "hello";
-        print_r($body_object);
 
         email(
             $body_object->user_email,
@@ -77,8 +75,6 @@
             $body_object->user
         );
         echo "Your email has been sent";
-    }else{
-        echo "didn't work";
     }
 
 
