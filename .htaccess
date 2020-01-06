@@ -9,7 +9,7 @@ RewriteCond %{REQUEST_METHOD} ^GET$
 RewriteRule ^fickle-parent/(.*)$ controllers/entries_controller.php?action=index&user=$1
 
 RewriteCond %{REQUEST_METHOD} ^POST$
-RewriteRule ^fickle-parent/$ controllers/entries_controller.php?action=create
+RewriteRule ^fickle-parent/create$ controllers/entries_controller.php?action=create
 
 RewriteCond %{REQUEST_METHOD} ^POST$
 RewriteRule ^fickle-parent/email$ controllers/entries_controller.php?action=email
