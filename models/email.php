@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 function email (){
 //     $request_body = json_decode('{
 //   "personalizations": [
