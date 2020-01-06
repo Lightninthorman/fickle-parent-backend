@@ -1,23 +1,34 @@
 <?php
 require 'vendor/autoload.php';
 function email (){
-    $email = new \SendGrid\Mail\Mail();
-    $email->setFrom("arthur.k777@gmail.com", "Example User");
-    $email->setSubject("Sending with Twilio SendGrid is Fun");
-    $email->addTo("arthur.k777@gmail.com", "Example User");
-    $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-    $email->addContent(
-        "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-    );
-    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
-    try {
-        $response = $sendgrid->send($email);
-        print $response->statusCode() . "\n";
-        print_r($response->headers());
-        print $response->body() . "\n";
-    } catch (Exception $e) {
-        echo 'Caught exception: '.  $e->getMessage(). "\n";
-    }    
+    $request_body = json_decode('{
+  "personalizations": [
+    {
+      "to": [
+        {
+          "email": "arthur.k777@gmail.com"
+        }
+      ],
+      "subject": "Hello World from the SendGrid PHP Library!"
+    }
+  ],
+  "from": {
+    "email": "arthur.k777@gmail.com"
+  },
+  "content": [
+    {
+      "type": "text/plain",
+      "value": "Hello, Email!"
+    }
+  ]
+}');
+
+$sg = new \SendGrid(getenv('SENDGRID_API_KEY'));
+
+$response = $sg->client->mail()->send()->post($request_body);
+echo $response->statusCode();
+echo $response->body();
+echo $response->headers();
 }
 
 
