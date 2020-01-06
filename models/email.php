@@ -1,7 +1,7 @@
 <?php
 require '../vendor/autoload.php';
 function email ($user_email,$child_email,$child,$rank,$score,$lowestAvg,$user){
-
+print_r($user_email);
     if($rank > 1){
         $improvement = "A great way to improve would be to work on $lowestAvg";
     }else{
