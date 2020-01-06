@@ -1,6 +1,7 @@
 <?php
 require '../vendor/autoload.php';
 function email (){
+    $hello = 'hello'
     $request_body = json_decode('{
   "personalizations": [
     {
@@ -18,7 +19,7 @@ function email (){
   "content": [
     {
       "type": "text/html",
-      "value": "<strong>and easy to do anywhere, even with PHP</strong><p>also try this <a href=\"https://www.google.com/\">google</a> link."
+      "value": '$hello .' <strong>and easy to do anywhere, even with PHP</strong><p>also try this <a href=\"https://www.google.com/\">google</a> link."
     }
   ]
 }');
