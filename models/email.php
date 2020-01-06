@@ -17,8 +17,8 @@ function email (){
   },
   "content": [
     {
-      "type": "text/plain",
-      "value": "Hello, Email!"
+      "type": "text/html",
+      "value": "<strong>and easy to do anywhere, even with PHP</strong>"
     }
   ]
 }');
