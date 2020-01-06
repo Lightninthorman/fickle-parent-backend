@@ -5,25 +5,9 @@
     include_once __DIR__ . '/../models/email.php';
 
     if($_REQUEST['action'] === 'index'){
-
+        email();
         echo json_encode(Entries::all($_REQUEST['user']));
 
-    }elseif($_REQEUEST['action'] === 'email'){
-        $request_body = file_get_contents('php://input');
-        print_r($request_body);
-        $body_object = json_decode($request_body);
-        echo "hello";
-        print_r($body_object);
-        email(
-            $body_object->user_email,
-            $body_object->child_email,
-            $body_object->child,
-            $body_object->rank,
-            $body_object->score,
-            $body_object->$lowestAvg,
-            $body_object->user
-        );
-        echo "Your email has been sent";
     }elseif ($_REQUEST['action'] === 'create'){
 
         $request_body = file_get_contents('php://input');
@@ -76,8 +60,25 @@
 
         $entries = Entries::update($updated_entry);
         echo json_encode($entries);
+    }elseif($_REQUEST['action'] === 'email'){
+        $request_body = file_get_contents('php://input');
+        print_r($request_body);
+        $body_object = json_decode($request_body);
+        echo "hello";
+        print_r($body_object);
+
+        email(
+            $body_object->user_email,
+            $body_object->child_email,
+            $body_object->child,
+            $body_object->rank,
+            $body_object->score,
+            $body_object->$lowestAvg,
+            $body_object->user
+        );
+        echo "Your email has been sent";
     }else{
-        echo "hi";
+        echo "didn't work";
     }
 
 
