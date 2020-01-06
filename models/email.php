@@ -3,7 +3,7 @@ require '../vendor/autoload.php';
 function email (){
     $hello = 'HELLO';
     $email = new \SendGrid\Mail\Mail();
-$email->setFrom("noreply@noreply.com", "Example User");
+$email->setFrom("arthur.k777@gmail.com", "Example User");
 $email->setSubject("Sending with Twilio SendGrid is Fun");
 $email->addTo("arthur.k777@gmail.com", "Example User");
 $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
