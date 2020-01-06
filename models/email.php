@@ -23,7 +23,7 @@ function email (){
   ]
 }');
 
-$sg = new \SendGrid(getenv('SENDGRID_API_KEY'));
+$sg = new SendGrid(getenv('SENDGRID_API_KEY'));
 
 $response = $sg->client->mail()->send()->post($request_body);
 echo $response->statusCode();
