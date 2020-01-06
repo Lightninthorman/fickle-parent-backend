@@ -76,6 +76,8 @@
 
         $entries = Entries::update($updated_entry);
         echo json_encode($entries);
+    }else{
+        echo "hi";
     }
 
 
