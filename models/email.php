@@ -19,7 +19,7 @@ function email (){
   "content": [
     {
       "type": "text/html",
-      "value": "'$hello .' <strong>and easy to do anywhere, even with PHP</strong><p>also try this <a href=\"https://www.google.com/\">google</a> link."
+      "value": "'. $hello .' <strong>and easy to do anywhere, even with PHP</strong><p>also try this <a href=\"https://www.google.com/\">google</a> link."
     }
   ]
 }');
