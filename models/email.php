@@ -18,7 +18,7 @@ function email (){
   "content": [
     {
       "type": "text/html",
-      "value": "<strong>and easy to do anywhere, even with PHP</strong>"
+      "value": "<strong>and easy to do anywhere, even with PHP</strong><p>also try this <a href=\"http//google.com\">google</a> link."
     }
   ]
 }');
