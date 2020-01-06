@@ -8,7 +8,7 @@
 $to_email = 'arthur.k777@gmail.com';
 $subject = 'Testing PHP Mail';
 $message = 'This mail is sent using the PHP mail function';
-$headers = 'From: noreply @ company . com';
+$headers = 'From: arthur.k777@gmail.com';
 mail($to_email,$subject,$message,$headers);
 
         echo json_encode(Entries::all($_REQUEST['user']));
