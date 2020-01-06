@@ -1,14 +1,30 @@
 <?php
     header('Content-Type: application/json');
-    
+
     include_once __DIR__ . '/../models/entries.php';
     include_once __DIR__ . '/../models/email.php';
 
     if($_REQUEST['action'] === 'index'){
-        email();
+
         echo json_encode(Entries::all($_REQUEST['user']));
 
-    } elseif ($_REQUEST['action'] === 'create'){
+    }elseif($_REQEUEST['action'] === 'email'){
+        $request_body = file_get_contents('php://input');
+        $body_object = json_decode($request_body);
+        if($body_object->user_email === null){
+            return;
+        }
+        email(
+            $body_object->user_email,
+            $body_object->child_email,
+            $body_object->child,
+            $body_object->rank,
+            $body_object->score,
+            $body_object->$lowestAvg,
+            $body_object->user
+        );
+        echo "Your email has been sent";
+    }elseif ($_REQUEST['action'] === 'create'){
 
         $request_body = file_get_contents('php://input');
         $body_object = json_decode($request_body);
