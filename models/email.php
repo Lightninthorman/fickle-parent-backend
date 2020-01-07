@@ -9,10 +9,16 @@ print_r($user_email);
     }
     $email = new \SendGrid\Mail\Mail();
 
-$email->setFrom("$user_email", "Example User");
-$email->setSubject("Sending with Twilio SendGrid is Fun");
-$email->addTo("$child_email", "Example User");
-$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+$email->setFrom("$user_email", "$user");
+$email->setSubject("$child, here are your current Fickle Parent results!");
+$email->addTo("$child_email", "$child");
+$email->addContent("text/plain",
+    "Hi $child!
+    Currently you are my #$rank child with a score of $score%.
+    $improvement
+    Love,
+    $user
+    ** A copy of this email has been sent to Santa to help inform his list **");
 $email->addContent(
     "text/html", "
     <p>Hi $child!</p>
@@ -20,7 +26,7 @@ $email->addContent(
     <p>$improvement</p>
     <p>Love,</p>
     <p>$user</p>
-    <p>** A copy of this email has been sent to Santa to help update his list **</p> 
+    <p>** A copy of this email has been sent to Santa to help inform his list **</p>
     "
 );
 $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
